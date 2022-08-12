@@ -226,10 +226,12 @@ Gateway APIs are supported. In particular:
 {% endif_version %}
 - queryParam matches matches are not supported.
 {% if_version gte: 2.4.x %}
+{% if_version lte: 2.5.x %}
 - Gateway Listener configuration does not support TLSConfig. You can't
   load certificates for HTTPRoutes and TLSRoutes via Gateway
   configuration, and must either accept the default Kong certificate or add
   certificates and SNI resources manually via the admin API in DB-backed mode.
+{% endif_version %}
 {% endif_version %}
 {% if_version gte: 2.5.x %}
 - Gateways [are not provisioned automatically](/kubernetes-ingress-controller/{{page.kong_version}}/concepts/gateway-api#gateway-management).
